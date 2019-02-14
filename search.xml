@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[spring boot开发脚手架]]></title>
+    <url>%2F2019%2F02%2F14%2Fspring-boot%E5%BC%80%E5%8F%91%E8%84%9A%E6%89%8B%E6%9E%B6%2F</url>
+    <content type="text"><![CDATA[玉柴中台上线后，为了减少培训和推广中台技术架构，本人特意为简化spring boot的开发，研发了一个开发脚手架，下面是简单的使用手册。 快速开始添加框架依赖1234567891011&lt;dependency&gt; &lt;groupId&gt;com.yuchai&lt;/groupId&gt; &lt;artifactId&gt;yuchai-framework-starter-common&lt;/artifactId&gt; &lt;version&gt;2.1.2.RELEASE&lt;/version&gt;&lt;/dependency&gt;&lt;dependency&gt; &lt;groupId&gt;com.yuchai&lt;/groupId&gt; &lt;artifactId&gt;yuchai-framework-starter-mybatisplus&lt;/artifactId&gt; &lt;version&gt;2.1.2.RELEASE&lt;/version&gt;&lt;/dependency&gt; 这两个框架的简单介绍：1、common包是通用是一下功能组件，包括：通一异常处理，日志，swagger接口文档集成，附件上传，jwt鉴权，excel导入导出，@RequestAttribute(“currentUser”)获取当前登录人，@UserLoginToken注解接口需要登录的访问控制，集成企业微信2、mybatisplus包是集成了mybatis的增强功能，主要是集成mybatis，接口的方式生成代码 配置玉柴maven私有仓库由于框架依赖没有发布到maven中央仓库，所以必须配置玉柴私有仓库,maven才能下载jar包成功1234567891011121314&lt;repositories&gt; &lt;!-- 配置nexus远程仓库 --&gt; &lt;repository&gt; &lt;id&gt;nexus&lt;/id&gt; &lt;name&gt;Nexus Snapshot Repository&lt;/name&gt; &lt;url&gt;http://172.16.90.84:8081/repository/maven-public/&lt;/url&gt; &lt;releases&gt; &lt;enabled&gt;true&lt;/enabled&gt; &lt;/releases&gt; &lt;snapshots&gt; &lt;enabled&gt;true&lt;/enabled&gt; &lt;/snapshots&gt; &lt;/repository&gt; &lt;/repositories&gt; yml配置数据源数据源配置支持动态数据源、多数据源配置，如果你使用的是mysql，则mysql主从的配置如下12345678910111213141516171819202122spring: datasource: dynamic: primary: master #设置默认的数据源或者数据源组,默认值即为master datasource: master: username: root password: 123456 driver-class-name: com.mysql.jdbc.Driver url: jdbc:mysql://xx.xx.xx.xx:3306/dynamic slave_1: username: root password: 123456 driver-class-name: com.mysql.jdbc.Driver url: jdbc:mysql://xx.xx.xx.xx:3307/dynamic slave_2: username: root password: 123456 driver-class-name: com.mysql.jdbc.Driver url: jdbc:mysql://xx.xx.xx.xx:3308/dynamic #......省略 #以上会配置一个默认库master，一个组slave下有两个子库slave_1,slave_2 如果你使用的是oracle数据库，则配置如下：123456789101112spring: datasource: dynamic: primary: oracle datasource: oracle: username: SRM password: SRM url: jdbc:oracle:thin:@172.16.135.41:1521/ndb2 driver-class-name: oracle.jdbc.driver.OracleDriver output-dir: D://workingSpace//idea//demo2//src//main//java base-package: com.example.demo 同时还支持mysql和oracle混合配置。更多请参考官方文档: Server 配置mybatis的mapper包扫描路径为了使mybatis配置生效，必须在启动类配置mybatis的mapper扫描路径@MapperScan(“com.example..mapper“)123456789@SpringBootApplication@MapperScan(&quot;com.example.*.mapper*&quot;)public class YuchaiDemoApplication &#123; public static void main(String[] args) &#123; SpringApplication.run(YuchaiDemoApplication.class, args); &#125;&#125; 运行项目配置好后即可运行项目，访问http://localhost:8080/swagger-ui.html地址进行mybatis自动代码生成。 根据你的数据源类型选择mysql还是oracle接口执行mybatis自动生成接口，输入参数是数据库表名称数组：例如 tb_role,tb_user 测试进行controller的业务接口开发，并登陆http://localhost:8080/swagger-ui.html进行测试]]></content>
+      <tags>
+        <tag>spring boot，java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[java]]></title>
+    <url>%2F2019%2F02%2F12%2Fjava%2F</url>
+    <content type="text"><![CDATA[这个是测试页面,admin]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+</search>
