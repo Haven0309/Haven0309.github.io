@@ -81,10 +81,16 @@ theme: next
 #   password_hash: $2a$10$GqtlYJ0yNu3gd/CCrA0tHuvFh/mYm3FD6lLhwv2hDBk0RyBD6vCZ.
 #   secret: zhao0309
 
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  #repo: https://github.com/Haven0309/Haven0309.github.io.git
-  repo: https://gitee.com/coderhaven/coderhaven.git
+  repo: https://github.com/Haven0309/Haven0309.github.io.git
+  # repo: https://gitee.com/coderhaven/coderhaven.git
   branch: master
