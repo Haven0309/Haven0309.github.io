@@ -4,9 +4,9 @@
 
 # Site
 title: Haven的个人博客
-subtitle: 采用hexo搭建，欢迎交流。
-description: Haven的个人博客，用于学习交流使用，采用hexo搭建，欢迎交流。
-keywords: 
+subtitle: Haven blog，欢迎交流。
+description: Haven的个人博客，用于学习交流使用，java小架构师，欢迎交流。
+keywords: haven,java,架构师，springboot，spring cloud
 author: Haven
 language: zh-CN
 timezone:
@@ -35,7 +35,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -75,9 +75,16 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
+# hexo-admin authentification
+# admin:
+#   username: haven
+#   password_hash: $2a$10$GqtlYJ0yNu3gd/CCrA0tHuvFh/mYm3FD6lLhwv2hDBk0RyBD6vCZ.
+#   secret: zhao0309
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/Haven0309/Haven0309.github.io.git
+  #repo: https://github.com/Haven0309/Haven0309.github.io.git
+  repo: https://gitee.com/coderhaven/coderhaven.git
   branch: master

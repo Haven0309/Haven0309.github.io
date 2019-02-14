@@ -26,6 +26,10 @@ type: about
 ![blockchain](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
 u=702257389,1274025419&fm=27&gp=0.jpg "区块链")
 
+-----
+
+`java`
+
 无序列表
 语法：
 无序列表用 - + * 任何一种都可以
